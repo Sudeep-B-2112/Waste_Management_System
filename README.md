@@ -1,88 +1,104 @@
-﻿# Waste-management-system
-EcoTrack — Waste Management System
+<div align="center">
+♻️ EcoTrack
+Role-Based Waste Management System
 
-A role-based waste management platform built with the MERN stack (MongoDB, Express, React, Node.js). Supports three roles — User, Collector, and Admin — for creating waste pickup requests, assigning collectors, uploading collection proof, and verifying completed pickups.
+A full-stack MERN application for managing waste pickup requests — from submission to collection to verification.
 
-Tech Stack
-Frontend: React (Vite)
-Backend: Node.js, Express
-Database: MongoDB (Mongoose)
-Auth: JWT, bcryptjs
-File uploads: Multer
-Project Structure
+Show Image Show Image Show Image Show Image Show Image
+
+</div>
+📖 About
+
+EcoTrack streamlines waste collection with three dedicated portals:
+
+Role	Capabilities
+👤 User	Submit pickup requests, track status in real time
+🚚 Collector	View assigned collections, mark as collected, upload proof photos
+🛡️ Admin	Assign collectors, verify or reject collection proof, view reports
+🛠️ Tech Stack
+<table> <tr> <td><b>Frontend</b></td> <td>React (Vite)</td> </tr> <tr> <td><b>Backend</b></td> <td>Node.js · Express</td> </tr> <tr> <td><b>Database</b></td> <td>MongoDB · Mongoose</td> </tr> <tr> <td><b>Auth</b></td> <td>JWT · bcryptjs</td> </tr> <tr> <td><b>File Uploads</b></td> <td>Multer</td> </tr> </table>
+📁 Project Structure
 waste-management-role-based/
-├── client/          # React frontend
-└── server/          # Express backend
-Prerequisites
-
-Before you begin, make sure you have installed:
-
-Node.js (v18 or higher recommended)
-MongoDB (running locally) or a MongoDB Atlas connection string
-npm (comes with Node.js)
-Setup Instructions
-1. Clone the repository
+├── client/          🎨 React frontend
+├── server/          ⚙️  Express backend
+└── README.md
+⚡ Quick Start
+✅ Prerequisites
+Node.js v18+
+MongoDB (local) or MongoDB Atlas
+npm
+1️⃣ Clone the repo
 bash
-git clone https://github.com/Sudeep-B-2112/Waste_Management_System.git    
+git clone https://github.com/Sudeep-B-2112/Waste_Management_System.git                                                       
 cd waste-management-role-based
-2. Backend setup
+2️⃣ Backend setup
 bash
 cd server
 npm install
 
-Create a .env file inside the server/ folder with the following variables:
+Create a .env file inside server/:
 
+env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 
-⚠️ Never commit your .env file. It's already excluded via .gitignore.
+⚠️ Never commit .env — it's already covered by .gitignore.
 
-Start the backend server:
+Run the server:
 
 bash
 npm run dev
 
-The API should now be running at http://localhost:5000. On first run, it seeds three demo accounts automatically:
+🟢 API live at → http://localhost:5000
+
+On first launch, three demo accounts are seeded automatically:
 
 Role	Email	Password
-Admin	admin@example.com	admin123
-User	user@example.com	user123
-Collector	collector@example.com	collector123
-3. Frontend setup
+🛡️ Admin	admin@example.com	admin123
+👤 User	user@example.com	user123
+🚚 Collector	collector@example.com	collector123
+3️⃣ Frontend setup
 
-Open a new terminal window:
+Open a new terminal:
 
 bash
 cd client
 npm install
 npm run dev
 
-The React app should now be running at http://localhost:5173 (default Vite port).
+🟢 App live at → http://localhost:5173
 
-4. Using the app
-Open http://localhost:5173 in your browser.
-Log in with one of the demo accounts above, or register a new user.
-User: create a waste pickup request, track its status.
-Admin: assign collectors to requests, verify uploaded collection proof.
-Collector: view assigned collections, mark as collected, upload proof photo.
-Environment Variables Reference
+🔑 Environment Variables
 Variable	Description	Example
-PORT	Port the backend server runs on	5000
+PORT	Backend server port	5000
 MONGO_URI	MongoDB connection string	mongodb://localhost:27017/ecotrack
-JWT_SECRET	Secret key used to sign JWT auth tokens	any long random string
-Available Scripts
+JWT_SECRET	Secret for signing JWT tokens	any long random string
+📜 Available Scripts
 
 Backend (server/)
 
-npm run dev — start server with auto-reload (nodemon)
-npm start — start server normally
+bash
+npm run dev       # start with auto-reload (nodemon)
+npm start         # start normally
 
 Frontend (client/)
 
-npm run dev — start Vite dev server
-npm run build — build production-ready frontend
-npm run preview — preview the production build locally
-Notes
-Uploaded collection photos are stored in server/uploads/ and served statically at /uploads/<filename>.
-Make sure MongoDB is running before starting the backend, or your MONGO_URI points to a live Atlas cluster.
+bash
+npm run dev       # start Vite dev server
+npm run build     # production build
+npm run preview   # preview production build
+🔄 App Flow
+User creates request  →  Admin assigns collector  →  Collector collects & uploads proof
+                                                              ↓
+                                          Admin verifies  →  ✅ Completed
+                                                 ↓
+                                          or ❌ Rejected → Collector re-uploads
+📝 Notes
+Collection photos are stored in server/uploads/ and served at /uploads/<filename>.
+Ensure MongoDB is running (or MONGO_URI points to a live Atlas cluster) before starting the backend.
+<div align="center">
+
+Made with ♻️ for a cleaner tomorrow
+
+</div>
